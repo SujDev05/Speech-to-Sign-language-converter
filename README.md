@@ -1,90 +1,98 @@
-# Speech-to-Sign-language-converter
-content for your Speech-to-Sign Language Converter project. Feel free to customize it further based on your project specifics:
+✅ Includes:
+Project intro
 
-markdown
-Copy
-Edit
-# Speech-to-Sign Language Converter
+Installation guide
 
-This project uses deep learning to convert spoken audio into real-time sign language animations. It utilizes automatic speech recognition (ASR) to transcribe speech into text and a Text-to-Sign Language Mapping Model to generate sign language gestures. 
+Running instructions
 
-## Features
-- Converts speech into text using ASR.
-- Translates text into dynamic sign language gestures.
-- Provides real-time sign language animation for communication.
+File explanations
 
-## Prerequisites
-
-Before you begin, make sure you have the following installed:
-
-- Python 3.8 or higher
-- Git (for version control)
-- Virtual environment (optional but recommended)
-- [TensorFlow](https://www.tensorflow.org/)
-- [PyTorch](https://pytorch.org/)
-
-## Installation
-
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/SujDev05/Speech-to-Sign-language-converter.git
-cd Speech-to-Sign-language-converter
-```
-Step 2: Set Up Virtual Environment (Optional but Recommended)
-If you want to create a virtual environment, follow these steps:
+Contribution & license section
 
 
-# Install virtualenv if you don't have it
-```bash
-pip install virtualenv
-```
-```bash
-# Create a virtual environment
-virtualenv venv
-```
-```bash
-# Activate the virtual environment
-source venv/bin/activate  # On Windows use 'venv\Scripts\activate'
+# 🧠 Speech-to-Sign Language Translator 🤟
+
+A deep learning-powered pipeline that translates **spoken language into sign language gestures** using audio, pretrained models, and gesture mapping. Built for inclusivity, accessibility, and a pinch of AI wizardry.
+
+
+⚙️ Installation
+Requires Python 3.8+
+
+1. Clone the repo
+``` bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 ```
 
-Step 3: Install Dependencies
-Once you have activated the virtual environment, install the required dependencies:
+2. Create and activate a virtual environment
+```bash
+# For Linux/macOS
+python -m venv sign_env
+source sign_env/bin/activate
+
+# For Windows
+python -m venv sign_env
+sign_env\Scripts\activate
+```
+
+3. Install Python dependencies
+If you don't have a requirements.txt, create one from the project:
+
+```bash
+#install common packages manually by creating requirements.txt file:
+requirements.txt:
+tensorflow>=2.11.0
+torch>=1.13.0
+numpy>=1.23.0
+librosa>=0.10.0
+opencv-python>=4.7.0
+scikit-learn>=1.2.0
+matplotlib>=3.6.0
+sounddevice>=0.4.6
+speechrecognition>=3.10.0
+pyaudio>=0.2.13
+flask>=2.2.2
+flask-cors>=3.0.10
+nltk>=3.8.1
+transformers>=4.25.1
+joblib>=1.2.0
+```
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Step 4: Download Pre-trained Models
-If you are using pre-trained models for ASR or sign language gestures, make sure to download them and place them in the appropriate directory as specified in the code. Example:
-
-Download the speech-to-text model and sign language model files and store them under the models/ directory.
-
-Step 5: Run the Project
-Start the Application: After installing dependencies and placing models in the right directory, you can run the main script to start the application.
-
 ```bash
-python app.py  # or the appropriate file to start the server
+pip install numpy pandas tensorflow flask
 ```
 
-Access the Application: Once the server is running, you should be able to access it locally, or if set up for remote use, at the given URL.
+ *Running the Project:*
+ To run the full pipeline from audio to sign gesture video:
+```bash
+python main.py
+```
 
-Step 6: Test the Speech-to-Sign Conversion
-To test the speech-to-sign language conversion:
+To run the web app (if using Flask/FastAPI):
+```bash
+python app.py
+```
+This will start a local server (likely on http://127.0.0.1:5000/) where you can upload audio and view gesture translation.
 
-Use the audio file input or microphone input to capture speech.
+*Models Used:*
+speech_to_sign_model.h5: Converts speech features to gesture class probabilities.
 
-The system will convert the speech into text and map it to corresponding sign language gestures.
+sign_language_model.h5: Generates sign gesture sequences (video or frames).
 
-Step 7: Customize and Extend
-Feel free to modify the existing code to add more gestures or extend the speech-to-text functionality as needed. You can train your own models if required, or use existing models from Hugging Face, TensorFlow, or other sources.
+gesture_mapping.json: Decodes model output into meaningful sign labels.
 
-Troubleshooting
-1. Missing Libraries
-If you encounter missing library errors, ensure that you have installed the required dependencies via pip install -r requirements.txt.
+*Sample Input*
+real-time live audio
 
-2. GPU Issues
-If you're using TensorFlow or PyTorch on a GPU and encounter issues, make sure you have installed the correct versions of tensorflow-gpu and torch.
+Output saved as: output.mp4
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+ *Contribution*
+Contributions are welcome! Feel free to fork, make a PR, or open issues.
+
+ License
+This project is licensed under the MIT License — use, modify, and share freely.
+
